@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include "include/calculation.h"
+#include "include/example.h"
 
 
 
@@ -18,8 +19,8 @@ using namespace std;
 using namespace v8;
 
 int addCalculation(int a, int b) {
-  
-  int variable = substraction(3, 3);
+  MathLibrary::Arithmetic::Add(3, 3);
+  // int variable = substraction(3, 3);
   return a + b;
 }
 

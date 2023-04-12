@@ -9,13 +9,13 @@
         "<(module_root_dir)/src/include"
       ],
       "libraries": [
-          "C:/Users/alexa/work/JSL/node/node-gyp-base-example/src/lib-calc-emcc.a",
+          "<(module_root_dir)/src/MathLibrary.lib",
        ],
        "copies": [
               {
               "destination": "<(module_root_dir)/build/Release/",
                   "files": [
-                      "C:/Users/alexa/work/JSL/node/node-gyp-base-example/src/lib-calc-emcc.a"
+                      "<(module_root_dir)/src/MathLibrary.lib"
                   ]
               },
           ]
