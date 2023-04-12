@@ -18,6 +18,4 @@ target_link_libraries(client  ${CMAKE_SOURCE_DIR}/src/lib-calc-emcc.a)
 # target_link_libraries(client  ${CMAKE_SOURCE_DIR}/src/lib-calc-clang.a)
 # target_link_libraries(client  ${CMAKE_SOURCE_DIR}/src/libsweepcalculator.a)
 target_include_directories(client PRIVATE "src")
-set_target_properties(client PROPERTIES LINK_FLAGS "-s DEMANGLE_SUPPORT=1 --bind")
-
-#wasm-ld: error: unknown file type:
+set_target_properties(client PROPERTIES LINK_FLAGS "-s MODULARIZE=1 --bind")
