@@ -10,15 +10,7 @@
       ],
       "libraries": [
           "<(module_root_dir)/src/MathLibrary.lib",
-       ],
-       "copies": [
-              {
-              "destination": "<(module_root_dir)/build/Release/",
-                  "files": [
-                      "<(module_root_dir)/src/MathLibrary.lib"
-                  ]
-              },
-          ]
+       ]
     },
   ]
 }

@@ -1,0 +1,30 @@
+name: Mountdev Monorepo
+run-name: CI 🚀
+on: [push]
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v3
+    
+      - run: |
+          echo "BASE: ${{ env.NX_BASE }}"
+          echo "HEAD: ${{ env.NX_HEAD }}"
+        
+      - name: Install packages
+        run: yarn
+      
+      - name: Lint
+        run: yarn run nx affected -t lint
+        
+      - name: Test
+        run: yarn run nx affected -t test
+        
+      - name: Build
+        run: yarn run nx affected -t build
